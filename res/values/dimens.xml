@@ -1,0 +1,21 @@
+<resources>
+
+    <dimen name="keyguard_clock_top_margin">40dp</dimen>
+    <dimen name="keyguard_clock_bottom_margin">40dp</dimen>
+
+    <dimen name="keyguard_settings_right_margin">15dp</dimen>
+    <dimen name="keyguard_settings_top_margin">40dp</dimen>
+
+    <dimen name="keyguard_settings_width">30dp</dimen>
+
+    <dimen name="keyguard_settings_notification_margin">40dp</dimen>
+
+    <!-- Default clock parameters -->
+    <dimen name="bottom_text_spacing_digital">-8dp</dimen>
+    <dimen name="label_font_size">14dp</dimen>
+    <dimen name="widget_label_font_size">14dp</dimen>
+    <dimen name="widget_big_font_size">80dp</dimen>
+    <dimen name="big_font_size">120dp</dimen>
+
+    <dimen name="password_width">170dp</dimen>
+</resources>

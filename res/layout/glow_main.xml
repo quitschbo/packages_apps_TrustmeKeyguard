@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/Settings"
+        android:layout_width="@dimen/keyguard_settings_width"
+        android:layout_height="@dimen/keyguard_settings_width"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/keyguard_settings_right_margin"
+        android:layout_marginTop="@dimen/keyguard_settings_top_margin"
+        android:background="@drawable/settings"
+    />
+
+    <TextClock
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/keyguard_clock_top_margin"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:format12Hour="HH:mm"
+        android:format24Hour="HH:mm"
+        style="@style/widget_big_thin"
+        android:textSize="80sp"/>
+
+    <TextClock
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:format12Hour="EEEE, MMMM d"
+        android:format24Hour="EEEE, MMMM d"
+        style="@style/widget_big_thin"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_weight="0.15"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/notification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            style="@style/widget_big_thin"
+            android:textSize="20sp"
+            android:lines="3"
+            android:layout_marginTop="@dimen/keyguard_settings_notification_margin"
+        />
+
+        <TextView
+            android:layout_weight="0.15"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <de.fraunhofer.aisec.trustme.keyguard.ContainerDotView
+        android:id="@+id/ContainerDotView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|center_horizontal"
+    />
+
+
+</LinearLayout>
