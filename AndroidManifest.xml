@@ -39,9 +39,8 @@
 	    android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
-		<category android:name="android.intent.category.DEFAULT" />
-		<category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
 
@@ -50,6 +49,7 @@
             android:theme="@style/Theme.Black">
         </activity>
 
+	<!--
         <activity
             android:name=".StartLockScreen"
             android:theme="@style/Theme.Black">
@@ -57,20 +57,11 @@
 
         <service android:name=".TrustmeKeyguardService">
         </service>
-
-        <receiver
-            android:enabled="true"
-            android:name=".LockScreenReceiver">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+	-->
 
     </application>
 
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
 

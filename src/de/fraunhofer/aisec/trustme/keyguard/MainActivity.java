@@ -126,19 +126,19 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
-        while(!simState.equals("READY")) {
-            Log.i("TrustmeLockScreenReceiver", "gsm.sim.state: " + simState);
-            if (inFlightMode() || simState.equals("ABSENT")) break; // Handle flight mode
-            try {
-                Thread.sleep(500);
-            } catch (Exception e) {}
-            simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
-        }
+        //String simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
+        //while(!simState.equals("READY")) {
+        //    Log.i("TrustmeLockScreenReceiver", "gsm.sim.state: " + simState);
+        //    if (inFlightMode() || simState.equals("ABSENT")) break; // Handle flight mode
+        //    try {
+        //        Thread.sleep(500);
+        //    } catch (Exception e) {}
+        //    simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
+        //}
 
         if (MainActivity.DEBUG) Log.d(TAG,"Starting MainActivtty");
         //getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
+        //getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
 
         setContentView(R.layout.glow_main);
 
@@ -158,11 +158,11 @@ public class MainActivity extends Activity {
 
         communicator = new Communicator();
 
-        try {
-                startService(new Intent(this,TrustmeKeyguardService.class));
-        } catch (Exception exp) {
+        //try {
+        //        startService(new Intent(this,TrustmeKeyguardService.class));
+        //} catch (Exception exp) {
 
-        }
+        //}
     }
 
     @Override
@@ -193,10 +193,10 @@ public class MainActivity extends Activity {
 
         View view = findViewById(android.R.id.content);
 
-        view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                                  |View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                                  |View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-                                  |View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        //view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        //                          |View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        //                          |View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        //                          |View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
     }
 
     @Override
