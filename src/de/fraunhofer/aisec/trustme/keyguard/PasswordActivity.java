@@ -71,6 +71,7 @@ public class PasswordActivity extends Activity {
                             communicator.startContainer(uuid, passwd);
                             wrongPasswordAttempts = 0;
                             handled = true;
+                            finish();
                         } catch (PasswordException e) {
                             wrongPasswordAttempts++;
                             passwordText.setText("Wrong password.");
