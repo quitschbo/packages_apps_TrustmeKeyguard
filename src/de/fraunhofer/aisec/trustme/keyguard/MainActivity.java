@@ -126,16 +126,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        String simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
-        while(!simState.equals("READY")) {
-            Log.i("TrustmeLockScreenReceiver", "gsm.sim.state: " + simState);
-            if (inFlightMode() || simState.equals("ABSENT")) break; // Handle flight mode
-            try {
-                Thread.sleep(500);
-            } catch (Exception e) {}
-            simState = SystemProperties.get("gsm.sim.state", "PIN_REQUIRED");
-        }
-
         if (MainActivity.DEBUG) Log.d(TAG,"Starting MainActivtty");
         //getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON|WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED);
